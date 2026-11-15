@@ -1,0 +1,116 @@
+# Phishing Email Analysis Report
+
+## 1. Objective
+To examine a suspicious email sample, inspect its sender information and email headers, identify possible phishing indicators, and assess the risks associated with its content and links.
+
+## 2. Sample Details
+
+| Field | Observation |
+|---|---|
+| Sample file | `sample-10.eml` |
+| Display name | OKX Extension |
+| Sender address | `hpayMonitorPlatform@handpay.com.cn` |
+| Subject | OKX Web3 Extension on Chrome Web Store (subject includes a promotional rating claim) |
+| Email format | Multipart: plain text and HTML |
+| Attachment | No attachment identified |
+| Main purpose | Promote installation of the OKX Web3 browser extension |
+
+## 3. Email Header Analysis
+
+### A. Sender Address
+The display name suggests that the email is associated with OKX. However, the actual sender address uses the domain `handpay.com.cn`, rather than an obvious official OKX domain.
+
+**Finding:** The difference between the displayed brand and the sender domain is suspicious and should be independently verified.
+
+### B. Return-Path
+The Return-Path also appears to use the `handpay.com.cn` domain.
+
+**Finding:** It is consistent with the sender's domain, but this does not establish that the sender is authorized to represent OKX.
+
+### C. SPF Authentication
+The SPF result in the supplied headers is `none`.
+
+**Finding:** The available header information does not show a successful SPF authentication result.
+
+### D. DKIM Authentication
+The DKIM result is `fail`. The signing domain shown in the headers is `http://dev.roombird.ru/`, and the DKIM key could not be found.
+
+**Finding:** The email's DKIM authentication failed. This is a significant warning, although it does not independently prove that the email is malicious.
+
+### E. DMARC Authentication
+The DMARC result is `none`.
+
+**Finding:** No successful DMARC authentication result is shown in the supplied headers.
+
+### F. Reply-To
+No separate Reply-To address was identified.
+
+**Finding:** No separate reply destination was available to compare with the sender address.
+
+## 4. Content Analysis
+
+The email promotes an OKX Web3 browser extension and encourages recipients to install the extension and create or import a wallet.
+
+The following points require attention:
+
+1. **Brand impersonation concern:** The email uses the OKX name, but the sender address belongs to a different domain.
+2. **Unverified promotional claims:** The email makes claims about the extension's rating and popularity. These claims have not been independently verified.
+3. **Installation request:** The email encourages the recipient to install a browser extension.
+4. **Wallet-related request:** It mentions creating or importing a wallet, which involves sensitive cryptocurrency-related activity.
+5. **Suspicious URL characteristics:** The extension link appears to use a Chrome Web Store address, but its URL contains Unicode characters that resemble ordinary Latin characters. This may be a lookalike-character technique and requires careful URL verification.
+
+## 5. Suspicious Indicators Identified
+
+| No. | Indicator | Observation |
+|---|---|---|
+| 1 | Sender-domain mismatch | OKX display name but `handpay.com.cn` sender |
+| 2 | SPF result | `none` |
+| 3 | DKIM result | `fail` |
+| 4 | DMARC result | `none` |
+| 5 | Unverified claims | Promotional rating and popularity claims |
+| 6 | Installation request | Encourages browser-extension installation |
+| 7 | URL characteristics | Possible Unicode lookalike characters in the link |
+
+## 6. Attachment and Link Inspection
+
+- No email attachment was identified in the supplied sample.
+- The email contains a link promoting a browser extension.
+- The link should not be opened directly on a normal system.
+- The destination and extension publisher should be verified independently through the official Chrome Web Store.
+
+## 7. Risk Assessment
+
+**Assessment: Suspicious email – further verification required.**
+
+The sender-domain mismatch, failed DKIM authentication, missing SPF and DMARC results, and potentially deceptive URL characteristics are warning signs.
+
+However, these findings alone do not prove that the email successfully steals credentials, installs malware, or compromises a wallet. Further investigation of the destination URL, extension publisher, and extension permissions would be needed to establish malicious activity.
+
+## 8. Recommended Security Measures
+
+1. Do not click suspicious links or install extensions directly from unsolicited emails.
+2. Verify the sender through the organization's official website.
+3. Inspect email authentication results, including SPF, DKIM, and DMARC.
+4. Check URLs carefully for misspelled domains and Unicode lookalike characters.
+5. Verify browser-extension publishers and permissions before installation.
+6. Never share wallet recovery phrases, private keys, or passwords.
+7. Report suspicious emails to the appropriate security team.
+
+## 9. Conclusion
+
+The analyzed email promotes an OKX Web3 browser extension, but several characteristics make it suspicious. The sender domain does not clearly match the displayed brand, DKIM authentication failed, and the supplied headers do not show successful SPF or DMARC results. The extension link also requires further inspection because of potentially deceptive Unicode characters.
+
+The email should be treated as suspicious until its sender and destination are independently verified. This analysis demonstrates how email headers, sender details, message content, and URLs can be examined to identify potential phishing attempts.
+
+## 10. Tools and Techniques Used
+
+- Email file inspection (`.eml`)
+- Email header analysis
+- Sender and Return-Path comparison
+- SPF, DKIM, and DMARC result inspection
+- URL inspection
+- Phishing-indicator identification
+
+## 11. Limitations
+
+This report is based on the supplied email file and its available headers. No live interaction with the link or browser extension was performed. The actual behavior of the extension and the safety of its destination have not been established.
