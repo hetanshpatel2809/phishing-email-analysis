@@ -1,0 +1,140 @@
+============================================================
+              PHISHING EMAIL ANALYSIS REPORT
+============================================================
+
+Project Name : Phishing Email Analysis
+Analysis Date: 15 November 2026
+Email Type   : Simulated Phishing Email
+Target Brand : PayPal
+
+============================================================
+1. OBJECTIVE
+============================================================
+
+To examine a suspicious email sample and identify
+common phishing characteristics, including sender
+spoofing, suspicious URLs, urgent language and
+attempts to steal sensitive information.
+
+============================================================
+2. EMAIL DETAILS
+============================================================
+
+Sender:
+security-alert@paypa1-support.example
+
+Subject:
+URGENT! Your PayPal Account Will Be Suspended
+Within 24 Hours
+
+Target URL:
+http://paypa1-support.example/verify-account
+
+============================================================
+3. PHISHING INDICATORS IDENTIFIED
+============================================================
+
+1. SUSPICIOUS SENDER ADDRESS
+
+The sender uses a lookalike domain containing
+"paypa1" instead of "paypal".
+
+2. DOMAIN IMPERSONATION
+
+The sender domain does not belong to the official
+PayPal domain.
+
+3. URGENT LANGUAGE
+
+The email demands immediate action and threatens
+account suspension within 24 hours.
+
+4. SUSPICIOUS URL
+
+The provided URL uses a lookalike domain and
+an HTTP connection instead of HTTPS.
+
+5. CREDENTIAL THEFT ATTEMPT
+
+The email requests account information and
+password, which is a strong phishing indicator.
+
+6. FEAR-BASED TACTICS
+
+The message threatens permanent account blocking
+to pressure the recipient into acting quickly.
+
+7. GENERIC GREETING
+
+The email starts with "Dear Customer" rather
+than addressing the recipient by name.
+
+============================================================
+4. EMAIL HEADER ANALYSIS
+============================================================
+
+Status: Not performed.
+
+Reason:
+The supplied sample is a simulated email body
+without complete technical email headers.
+
+Further investigation would require:
+- Received headers
+- Return-Path
+- Reply-To
+- SPF authentication result
+- DKIM authentication result
+- DMARC authentication result
+
+============================================================
+5. ATTACHMENT ANALYSIS
+============================================================
+
+No attachments were included in the sample.
+
+============================================================
+6. FINDINGS
+============================================================
+
+Total Phishing Indicators Identified: 7
+
+Major Findings:
+- Lookalike sender domain
+- Brand impersonation
+- Suspicious verification link
+- Credential harvesting attempt
+- Urgency and fear-based manipulation
+
+============================================================
+7. CONCLUSION
+============================================================
+
+The analyzed email contains multiple characteristics
+commonly associated with phishing attacks.
+
+The sender impersonates a trusted payment service
+and uses urgency, a suspicious URL and credential
+requests to manipulate the recipient.
+
+The email should be treated as suspicious and
+should not be trusted.
+
+============================================================
+8. RECOMMENDATIONS
+============================================================
+
+1. Verify the sender's domain before responding.
+2. Avoid clicking suspicious email links.
+3. Never share passwords through email links.
+4. Inspect email headers when available.
+5. Verify suspicious requests through official
+   websites or support channels.
+6. Report suspected phishing emails.
+
+============================================================
+                 END OF REPORT
+============================================================
+
+Note: This report is based on a simulated email
+sample created for cybersecurity awareness training.
